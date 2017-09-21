@@ -1,11 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:orientation="vertical"
-    tools:context="com.youthlive.youthlive.Login">
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent">
 
 
     <ImageView
@@ -17,49 +13,75 @@
     <ImageView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:src="@drawable/dark_shade"
-        />
+        android:src="@drawable/dark_shade"/>
+
+
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="vertical"
-        android:layout_alignParentBottom="true"
-        >
+        android:layout_height="match_parent"
+        android:orientation="vertical">
 
-        <Button
+
+
+        <EditText
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="@drawable/cdcdcd_stroke"
-            android:text="Sign Up"
-            android:id="@+id/create"
+            android:hint="Phone"
+            android:layout_marginTop="140dp"
+            android:padding="10dp"
+            android:inputType="textPersonName"
+            android:layout_gravity="center"
+            android:drawableStart="@drawable/user"
+            android:gravity="center_vertical"
             android:layout_marginStart="30dp"
-            android:textColor="@color/colorAccent"
+            android:drawablePadding="10dp"
             android:layout_marginEnd="30dp"
-            android:layout_marginBottom="5dp"
+            android:textColorHint="#fff"
+            android:background="@drawable/white_stroke"
             />
 
-        <TextView
+        <EditText
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_gravity="center_vertical"
-            android:gravity="center"
-            android:textColor="#fff"
-            android:layout_marginTop="10dp"
+            android:hint="Password"
+            android:inputType="textPassword"
+            android:layout_marginTop="18dp"
+            android:padding="10dp"
+            android:drawablePadding="10dp"
+            android:layout_gravity="center"
+            android:drawableStart="@drawable/lock"
+            android:gravity="center_vertical"
+            android:layout_marginStart="30dp"
+            android:layout_marginEnd="30dp"
             android:layout_marginBottom="10dp"
-            android:text="already have an account"/>
+            android:textColorHint="#fff"
+            android:background="@drawable/white_stroke"
+            />
 
         <Button
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:background="@drawable/red_stroke"
             android:text="login"
-            android:textColor="#fff"
-            android:layout_marginTop="5dp"
             android:id="@+id/login"
+            android:textColor="#fff"
+            android:padding="5dp"
+            android:layout_marginTop="20dp"
             android:layout_marginStart="30dp"
             android:layout_marginEnd="30dp"
             />
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textColor="#fff"
+            android:layout_gravity="end"
+            android:gravity="end"
+            android:layout_marginTop="30dp"
+            android:layout_marginEnd="30dp"
+            android:text="forget Password?"/>
+
+
 
         <TextView
             android:layout_width="match_parent"
@@ -141,54 +163,6 @@
                     android:layout_gravity="center"
                     android:background="@drawable/white_circle"/>
             </LinearLayout>
-        </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center_vertical"
-            android:layout_margin="30dp"
-            android:gravity="center"
-            android:orientation="vertical">
-
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:textColor="#fff"
-            android:layout_gravity="center_vertical"
-            android:gravity="center"
-            android:text="by signing up and you agree to our"/>
-
-<LinearLayout
-    android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    android:orientation="horizontal"
-    android:layout_gravity="center"
-    android:gravity="center">
-
-
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:textColor="@color/colorPrimary"
-                android:text="Terms of use"/>
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textColor="#fff"
-        android:text=" and"/>
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textColor="@color/colorPrimary"
-        android:text=" private policy."/>
-
-
-
-</LinearLayout>
         </LinearLayout>
     </LinearLayout>
 

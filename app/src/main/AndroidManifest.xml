@@ -10,13 +10,21 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity android:name=".Screen1">
+
+        </activity>
+        <activity android:name=".Login" >
+
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
+
         </activity>
-        <activity android:name=".Login"></activity>
+        <activity android:name=".Register" />
+        <activity android:name=".Signin" />
+        <activity android:name=".OTP" />
+        <activity android:name=".MainActivity"></activity>
     </application>
 
 </manifest>

@@ -1,5 +1,6 @@
 package com.youthlive.youthlive;
 
+import android.content.Intent;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentTransaction;
 import android.support.v4.widget.DrawerLayout;
@@ -43,6 +44,16 @@ public class MainActivity extends AppCompatActivity {
         drawer.setDrawerListener(toggle);
         toggle.syncState();
 
+
+        live.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+                Intent intent = new Intent(MainActivity.this , GoLive.class);
+                startActivity(intent);
+
+            }
+        });
 
 
         online.setOnClickListener(new View.OnClickListener() {

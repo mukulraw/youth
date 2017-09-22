@@ -1,6 +1,7 @@
 package com.youthlive.youthlive;
 
 import android.content.Intent;
+import android.graphics.Color;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentTransaction;
 import android.support.v4.widget.DrawerLayout;
@@ -36,6 +37,9 @@ public class MainActivity extends AppCompatActivity {
 
         setSupportActionBar(toolbar);
 
+        toolbar.setTitleTextColor(Color.WHITE);
+
+
         getSupportActionBar().setDisplayShowTitleEnabled(false);
 
         drawer = (DrawerLayout) findViewById(R.id.activity_main);
@@ -62,6 +66,8 @@ public class MainActivity extends AppCompatActivity {
 
                 Log.d("asd" , "online clicked");
 
+                toolbar.setTitle("Live Room");
+
                 FragmentTransaction ft = getSupportFragmentManager().beginTransaction();
 
                 while (getSupportFragmentManager().getBackStackEntryCount() > 0) {
@@ -77,11 +83,59 @@ public class MainActivity extends AppCompatActivity {
         });
 
 
+        timeline.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+                Log.d("asd" , "online clicked");
+
+                toolbar.setTitle("Timeline");
+
+                FragmentTransaction ft = getSupportFragmentManager().beginTransaction();
+
+                while (getSupportFragmentManager().getBackStackEntryCount() > 0) {
+                    getSupportFragmentManager().popBackStackImmediate();
+                }
+
+                Timeline frag1 = new Timeline();
+                ft.replace(R.id.replace , frag1);
+                ft.setTransition(FragmentTransaction.TRANSIT_FRAGMENT_CLOSE);
+                ft.commit();
+
+            }
+        });
+
+
+        profile.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+                Log.d("asd" , "online clicked");
+
+                toolbar.setTitle("Profile");
+
+                FragmentTransaction ft = getSupportFragmentManager().beginTransaction();
+
+                while (getSupportFragmentManager().getBackStackEntryCount() > 0) {
+                    getSupportFragmentManager().popBackStackImmediate();
+                }
+
+                Profile frag1 = new Profile();
+                ft.replace(R.id.replace , frag1);
+                ft.setTransition(FragmentTransaction.TRANSIT_FRAGMENT_CLOSE);
+                ft.commit();
+
+            }
+        });
+
+
         vlog.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
 
                 Log.d("asd" , "vlog clicked");
+
+                toolbar.setTitle("Vlog");
 
                 FragmentTransaction ft = getSupportFragmentManager().beginTransaction();
 
@@ -99,6 +153,7 @@ public class MainActivity extends AppCompatActivity {
 
 
 
+        toolbar.setTitle("Live Room");
         FragmentManager fm = getSupportFragmentManager();
         FragmentTransaction ft = fm.beginTransaction();
         Live frag1 = new Live();

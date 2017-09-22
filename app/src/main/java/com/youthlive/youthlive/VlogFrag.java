@@ -6,9 +6,12 @@ import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
 import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.support.v7.widget.StaggeredGridLayoutManager;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+
+import com.sackcentury.shinebuttonlib.ShineButton;
 
 /**
  * Created by TBX on 9/21/2017.
@@ -18,21 +21,18 @@ public class VlogFrag extends Fragment {
 
 
     RecyclerView grid;
-    GridLayoutManager manager;
+    private RecyclerView.LayoutManager manager;
     LiveAdapter adapter;
 
 
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
+
         View view = inflater.inflate(R.layout.vlog_frag_layout , container , false);
-
         grid = (RecyclerView)view.findViewById(R.id.grid);
-        manager = new GridLayoutManager(getContext() , 2);
-
-
+        manager = new StaggeredGridLayoutManager(2, StaggeredGridLayoutManager.VERTICAL);
         adapter = new LiveAdapter(getContext());
-
         grid.setAdapter(adapter);
         grid.setLayoutManager(manager);
 
@@ -46,6 +46,7 @@ public class VlogFrag extends Fragment {
     {
 
         Context context;
+
 
         public LiveAdapter(Context context)
         {
@@ -73,8 +74,14 @@ public class VlogFrag extends Fragment {
         class ViewHolder extends RecyclerView.ViewHolder
         {
 
-            public ViewHolder(View itemView) {
+            ShineButton shineButton;
+
+            public ViewHolder(View itemView)
+            {
                 super(itemView);
+
+
+
             }
         }
     }

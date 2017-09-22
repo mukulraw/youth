@@ -1,5 +1,6 @@
 package com.youthlive.youthlive;
 
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -25,6 +26,16 @@ public class GoLive extends AppCompatActivity {
             public void onClick(View view) {
 
                 finish();
+
+            }
+        });
+
+        goLive.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+                Intent intent = new Intent(GoLive.this , LiveScreen.class);
+                startActivity(intent);
 
             }
         });

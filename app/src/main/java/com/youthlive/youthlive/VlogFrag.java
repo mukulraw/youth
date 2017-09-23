@@ -13,6 +13,8 @@ import android.view.ViewGroup;
 
 import com.sackcentury.shinebuttonlib.ShineButton;
 
+import java.util.Random;
+
 /**
  * Created by TBX on 9/21/2017.
  */
@@ -21,7 +23,7 @@ public class VlogFrag extends Fragment {
 
 
     RecyclerView grid;
-    private RecyclerView.LayoutManager manager;
+    StaggeredGridLayoutManager manager;
     LiveAdapter adapter;
 
 
@@ -32,9 +34,11 @@ public class VlogFrag extends Fragment {
         View view = inflater.inflate(R.layout.vlog_frag_layout , container , false);
         grid = (RecyclerView)view.findViewById(R.id.grid);
         manager = new StaggeredGridLayoutManager(2, StaggeredGridLayoutManager.VERTICAL);
+        manager.setGapStrategy(StaggeredGridLayoutManager.GAP_HANDLING_NONE);
         adapter = new LiveAdapter(getContext());
         grid.setAdapter(adapter);
         grid.setLayoutManager(manager);
+        grid.setHasFixedSize(true);
 
 
         return view;
@@ -64,12 +68,19 @@ public class VlogFrag extends Fragment {
         @Override
         public void onBindViewHolder(ViewHolder holder, int position) {
 
+
+
         }
 
         @Override
         public int getItemCount() {
             return 14;
         }
+
+
+
+
+
 
         class ViewHolder extends RecyclerView.ViewHolder
         {
